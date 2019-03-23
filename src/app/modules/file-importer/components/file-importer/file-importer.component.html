@@ -1,0 +1,4 @@
+<label for="file-chooser">Choose a file with issues:</label>
+
+<input type="file" id="file-chooser" name="fileChooser" accept="text/csv" (change)="onFileChange($event)">
+<button role="button" [disabled]="!file" (click)="submitFile()">Submit</button>

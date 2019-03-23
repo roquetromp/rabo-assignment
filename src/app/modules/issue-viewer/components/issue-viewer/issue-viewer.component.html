@@ -1,0 +1,26 @@
+<div *ngIf="issues.length" class="rabo-issue-viewer">
+  <form [formGroup]="filterForm" novalidate>
+    <label for="filterCount">Minimum issue count</label>
+    <input 
+        type="number" 
+        (change)="filterIssues()" 
+        formControlName="filterCount" 
+        min="0" 
+        id="filterCount">
+  </form>
+  
+  <table>
+    <tr>
+      <th>First Name</th>
+      <th>Surname</th>
+      <th>Issue Count</th>
+      <th>Date of Birth</th>
+    </tr>
+    <tr *ngFor="let issue of issues">
+      <td>{{ issue.firstName }}</td>
+      <td>{{ issue.surname }}</td>
+      <td>{{ issue.issueCount }}</td>
+      <td>{{ issue.dateOfBirth | date }}</td>
+    </tr>
+  </table>
+</div>
