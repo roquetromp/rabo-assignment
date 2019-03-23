@@ -1,4 +1,17 @@
-<label for="file-chooser">Choose a file with issues:</label>
+<div class="file-importer">
+    <label for="file-chooser" class="file-importer__label">Choose a file with issues:</label>
+    <input 
+        class="file-importer__button"
+        type="file" 
+        id="file-chooser" 
+        name="fileChooser" 
+        accept="text/csv" 
+        (change)="onFileChange($event)">
 
-<input type="file" id="file-chooser" name="fileChooser" accept="text/csv" (change)="onFileChange($event)">
-<button role="button" [disabled]="!file" (click)="submitFile()">Submit</button>
+        <button role="button" 
+                class="file-importer__buton" 
+                [disabled]="!file" 
+                (click)="submitFile()">
+                Submit
+        </button>
+</div>

@@ -1,7 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FileImporterContainerComponent } from './modules/file-importer/container/file-importer-container/file-importer-container.component';
 import { FileImporterComponent } from './modules/file-importer/components/file-importer/file-importer.component';
