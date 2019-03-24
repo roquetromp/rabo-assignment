@@ -1,14 +1,31 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FileImporterContainerComponent } from './file-importer-container.component';
+import { NO_ERRORS_SCHEMA } from '@angular/compiler/src/core';
+import { Component, Input } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Import } from '../../../../store/actions/issue.actions';
 
-describe('FileImporterContainerComponent', () => {
+@Component({selector: 'rabo-file-importer', template:''})
+class RaboFileImporterMockComponent {
+}
+
+fdescribe('FileImporterContainerComponent', () => {
   let component: FileImporterContainerComponent;
   let fixture: ComponentFixture<FileImporterContainerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FileImporterContainerComponent ]
+      declarations: [ 
+        FileImporterContainerComponent , 
+        RaboFileImporterMockComponent
+      ],
+      providers: [
+        {provide: Store,
+        useValue: {
+          dispatch: jasmine.createSpy('Store.dispatch')
+        }}
+      ]
     })
     .compileComponents();
   }));
@@ -22,4 +39,12 @@ describe('FileImporterContainerComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should call the store dispatch method when importFile is called', ()=> {
+    const store = TestBed.get(Store);
+    const file:File = new File([], 'mockFile.test');
+
+    component.importFile(file);
+    expect(store.dispatch).toHaveBeenCalledWith(new Import(file));
+  })
 });

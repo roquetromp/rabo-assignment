@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { FileParserService } from './file-parser.service';
 import { Issue } from '../models/issue.model';
 
-fdescribe('FileParserService', () => {
+describe('FileParserService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
