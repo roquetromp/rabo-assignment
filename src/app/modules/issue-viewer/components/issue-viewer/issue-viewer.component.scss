@@ -1,0 +1,33 @@
+@import '../../../../../styles.scss';
+@import '~bootstrap/scss/tables';
+
+.rabo-issue-viewer {
+    color: $rabo-color-blue;
+    font-family: $rabo-font;
+    text-align: center;
+
+    &__filter-form {
+        text-align: left;
+        &__filter-count-input {
+            width: 42px;
+            padding-left: $rabo-spacing;
+            border-color: $rabo-color-dark-grey;
+            font-size:1rem;
+            text-align: left;
+            border-top: none;
+            border-right: 1px solid transparent;
+            border-left: 1px solid transparent;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+        }
+    }
+
+    &__table {
+        thead {
+            background-color: $rabo-color-blue;
+            color:white;
+            font-size: 1.3em
+        }
+    }
+}

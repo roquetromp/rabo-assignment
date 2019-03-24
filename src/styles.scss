@@ -1,0 +1,15 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+$rabo-color-orange: #fd6400;
+$rabo-color-blue: #009;
+$rabo-color-grey: #E8E8E8;
+$rabo-color-dark-grey: #666;
+$rabo-font: Myriad,Segoe UI,Helvetica Neue,Arial,Sans-serif;
+
+$rabo-spacing: 14px;
+
+body {
+    font-family: $rabo-font
+}

@@ -3,7 +3,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 @Component({
   selector: 'rabo-file-importer',
   templateUrl: './file-importer.component.html',
-  styleUrls: ['./file-importer.component.sass']
+  styleUrls: ['./file-importer.component.scss']
 })
 export class FileImporterComponent implements OnInit {
   @Output () onFileSubmit: EventEmitter<File> = new EventEmitter<File>();

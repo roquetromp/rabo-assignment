@@ -1,15 +1,23 @@
 <div class="file-importer">
-    <label for="file-chooser" class="file-importer__label">Choose a file with issues:</label>
-    <input 
-        class="file-importer__button"
-        type="file" 
-        id="file-chooser" 
-        name="fileChooser" 
-        accept="text/csv" 
-        (change)="onFileChange($event)">
-
+        <div class="file-importer__file-chooser">
+            <div>
+                <label 
+                    for="file-chooser" 
+                    class="file-importer__file-chooser__label">
+                    Choose a file:
+                </label>
+            </div>
+            <input 
+                class="file-importer__inputfile"
+                type="file" 
+                id="file-chooser" 
+                name="fileChooser" 
+                accept="text/csv" 
+                (change)="onFileChange($event)">
+        </div>
+        
         <button role="button" 
-                class="file-importer__buton" 
+                class="file-importer__button" 
                 [disabled]="!file" 
                 (click)="submitFile()">
                 Submit

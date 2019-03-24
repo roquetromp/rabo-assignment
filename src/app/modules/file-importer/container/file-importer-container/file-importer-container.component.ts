@@ -8,7 +8,6 @@ import { Issue } from '../../../../models/issue.model';
 @Component({
   selector: 'rabo-file-importer-container',
   templateUrl: './file-importer-container.component.html',
-  styleUrls: ['./file-importer-container.component.sass']
 })
 export class FileImporterContainerComponent implements OnInit {
   

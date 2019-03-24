@@ -5,7 +5,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 @Component({
   selector: 'rabo-issue-viewer',
   templateUrl: './issue-viewer.component.html',
-  styleUrls: ['./issue-viewer.component.sass']
+  styleUrls: ['./issue-viewer.component.scss']
 })
 export class IssueViewerComponent implements OnInit {
   @Input() issues: Issue[];

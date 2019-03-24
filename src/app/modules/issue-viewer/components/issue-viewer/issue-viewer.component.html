@@ -1,26 +1,36 @@
-<div *ngIf="issues.length" class="rabo-issue-viewer">
-  <form [formGroup]="filterForm" novalidate>
-    <label for="filterCount">Minimum issue count</label>
-    <input 
-        type="number" 
-        (change)="filterIssues()" 
-        formControlName="filterCount" 
-        min="0" 
-        id="filterCount">
+<div class="rabo-issue-viewer" *ngIf="issues.length">
+  <h2>Issue viewer</h2>
+  <form [formGroup]="filterForm" class="rabo-issue-viewer__filter-form" novalidate>
+    <div class="label">
+      <label for="filterCount">Minimum issue count</label>
+    </div>
+    <div class="input">
+      <input 
+          class="rabo-issue-viewer__filter-form__filter-count-input"
+          type="number" 
+          (change)="filterIssues()" 
+          formControlName="filterCount" 
+          min="0" 
+          id="filterCount">
+    </div>
   </form>
   
-  <table>
-    <tr>
-      <th>First Name</th>
-      <th>Surname</th>
-      <th>Issue Count</th>
-      <th>Date of Birth</th>
-    </tr>
-    <tr *ngFor="let issue of issues">
-      <td>{{ issue.firstName }}</td>
-      <td>{{ issue.surname }}</td>
-      <td>{{ issue.issueCount }}</td>
-      <td>{{ issue.dateOfBirth | date }}</td>
-    </tr>
+  <table class="table rabo-issue-viewer__table">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Surname</th>
+        <th>Issue Count</th>
+        <th>Date of Birth</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let issue of issues">
+        <td>{{ issue.firstName }}</td>
+        <td>{{ issue.surname }}</td>
+        <td>{{ issue.issueCount }}</td>
+        <td>{{ issue.dateOfBirth | date }}</td>
+      </tr>
+    </tbody>
   </table>
 </div>

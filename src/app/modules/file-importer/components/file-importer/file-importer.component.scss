@@ -1,0 +1,28 @@
+@import '../../../../../styles';
+
+.file-importer {
+    font-family: $rabo-font;
+    &__file-chooser {
+        color: $rabo-color-blue;
+        margin-bottom: $rabo-spacing;
+        &__label {
+            margin-right: $rabo-spacing;
+        }
+    }
+    &__button {
+        display: block;
+        border-radius: 7px/50%;
+        background-color: $rabo-color-orange;
+        width: 189px;
+        height: 42px;
+        padding:0 $rabo-spacing;
+        font-size: 16px;
+        color: white;
+        cursor: pointer;
+    }
+
+    &__button:disabled {
+        background-color:$rabo-color-grey;;
+        cursor:auto;
+    }
+}

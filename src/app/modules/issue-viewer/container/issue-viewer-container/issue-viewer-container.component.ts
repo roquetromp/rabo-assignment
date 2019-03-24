@@ -11,8 +11,7 @@ import { Filter } from '../../../../store/actions/issue.actions';
   template: `<rabo-issue-viewer 
                 (onFilterIssues)="applyFilter($event)"
                 [issues]="issues$ | async">
-            </rabo-issue-viewer>`,
-  styleUrls: ['./issue-viewer-container.component.sass']
+            </rabo-issue-viewer>`
 })
 export class IssueViewerContainerComponent implements OnInit {
   issues$: Observable<Issue[]>;

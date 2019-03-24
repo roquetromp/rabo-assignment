@@ -21,7 +21,7 @@ export class FileParserService {
 
     return parsedFile$.pipe(
       tap(f => console.log(f)),
-      map(file => (file).split('\r\n'))
+      map(file => (file).split(/\r\n|\n/))
     );
   }
 

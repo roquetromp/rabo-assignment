@@ -1,3 +1,35 @@
-<rabo-file-importer-container></rabo-file-importer-container>
+<header class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-1">
+                <img class="header__logo" src="assets/img/rabobank-logo-top.png" alt="Rabobank Logo">
+            </div>
+            <div class="col-2 header__title">
+                <h2>Rabobank</h2>
+            </div>
+        </div>
+    </div>
 
-<rabo-issue-viewer-container></rabo-issue-viewer-container>
+    <nav class="header__nav">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <a href="#">&lsaquo; Issues</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<section class="section-center container">
+    <div class="row section__file-importer">
+        <div class="col">
+            <rabo-file-importer-container></rabo-file-importer-container>
+        </div>
+    </div>
+    <hr>
+    <div class="row section__issue-viewer">
+        <div class="col">
+            <rabo-issue-viewer-container></rabo-issue-viewer-container>
+        </div>
+    </div>
+</section>
