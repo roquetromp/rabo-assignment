@@ -30,6 +30,5 @@ describe('FileParserService', () => {
     }];
 
     expect(issueArray).toEqual(expectedArray);
-
   });
 });
