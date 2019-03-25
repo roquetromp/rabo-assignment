@@ -6,5 +6,5 @@ export const getIssuesState = (state: fromAppState.State) => state.issues;
 
 export const getIssues = createSelector(
     getIssuesState,
-    (state: fromIssuesState.State) => state.filteredIssues
+    (state: fromIssuesState.State) => state.issues
 )

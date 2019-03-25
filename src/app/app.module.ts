@@ -11,6 +11,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { IssueEffects } from './store/effects/issue.effects';
 import { appReducers } from './store/reducers/app.reducers';
 import { ReactiveFormsModule } from "@angular/forms";
+import { IssuesFilterPipe } from './pipes/issues-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ReactiveFormsModule } from "@angular/forms";
     FileImporterContainerComponent,
     FileImporterComponent,
     IssueViewerContainerComponent,
-    IssueViewerComponent
+    IssueViewerComponent,
+    IssuesFilterPipe
   ],
   imports: [
     BrowserModule,

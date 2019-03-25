@@ -9,13 +9,7 @@ export function reducer(state: State = initialState, action: IssueActionType): S
             return {
                 ...state,
                 issues: action.payload,
-                filteredIssues: action.payload,
                 isProcessing: false
-            }
-        case IssueActions.Filter:
-            return {
-                ...state,
-                filteredIssues: state.issues.filter(issue => issue.issueCount > action.payload)
             }
         default:
             return { ...state }
