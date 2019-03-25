@@ -10,7 +10,7 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./file-importer.component.scss']
 })
 export class FileImporterComponent implements OnInit {
-  @Output () fileSubmit: EventEmitter<File> = new EventEmitter<File>();
+  @Output() fileSubmit: EventEmitter<File> = new EventEmitter<File>();
   file: File = null;
   fileImporterForm: FormGroup = new FormGroup({
     fileInput: new FormControl(null)
@@ -28,11 +28,12 @@ export class FileImporterComponent implements OnInit {
 
   onFileChange(event) {
     this.file = event.target.files[0];
-    this.fileParserService.parseCSVFile(this.file).pipe(
-      map(fileContent => this.fileValidatorService.isValidFormat(fileContent))
-    ).subscribe(isValid => {
-      this.fileImporterForm.controls['fileInput'].setErrors(!isValid ? {invalidFormat: isValid} : null);
-    });
+    this.fileParserService
+      .parseCSVFile(this.file).pipe(
+        map(fileContent => this.fileValidatorService.isValidFormat(fileContent))
+      ).subscribe(isValid => {
+        this.fileImporterForm.controls['fileInput'].setErrors(!isValid ? { invalidFormat: isValid } : null);
+      });
   }
 
 }

@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { IssueViewerComponent } from './issue-viewer.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { IssuesFilterPipe } from 'src/app/pipes/issues-filter.pipe';
 
 describe('IssueViewerComponent', () => {
   let component: IssueViewerComponent;
@@ -8,7 +10,8 @@ describe('IssueViewerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IssueViewerComponent ]
+      imports: [ReactiveFormsModule],
+      declarations: [ IssueViewerComponent, IssuesFilterPipe ]
     })
     .compileComponents();
   }));

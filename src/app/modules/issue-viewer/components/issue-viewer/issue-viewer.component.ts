@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Issue } from '../../../../models/issue.model';
 import { FormGroup, FormControl } from '@angular/forms';
 
@@ -7,7 +7,7 @@ import { FormGroup, FormControl } from '@angular/forms';
   templateUrl: './issue-viewer.component.html',
   styleUrls: ['./issue-viewer.component.scss']
 })
-export class IssueViewerComponent implements OnInit {
+export class IssueViewerComponent {
   @Input() issues: Issue[];
   filterCount = 0;
 
@@ -15,12 +15,7 @@ export class IssueViewerComponent implements OnInit {
     filterCount: new FormControl(0),
   });
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-  filterIssues() {
+  setFilterCount() {
     this.filterCount = this.filterForm.get('filterCount').value;
   }
 

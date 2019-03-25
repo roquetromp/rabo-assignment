@@ -9,7 +9,7 @@ import { Import } from '../../../../store/actions/issue.actions';
 class RaboFileImporterMockComponent {
 }
 
-fdescribe('FileImporterContainerComponent', () => {
+describe('FileImporterContainerComponent', () => {
   let component: FileImporterContainerComponent;
   let fixture: ComponentFixture<FileImporterContainerComponent>;
 

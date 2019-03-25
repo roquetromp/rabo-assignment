@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FileImporterComponent } from './file-importer.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('FileImporterComponent', () => {
   const mockedFile = new File([], 'mockFile.test');
@@ -9,6 +10,7 @@ describe('FileImporterComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ReactiveFormsModule],
       declarations: [ FileImporterComponent ]
     })
     .compileComponents();
