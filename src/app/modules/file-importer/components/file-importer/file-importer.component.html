@@ -1,25 +1,28 @@
 <div class="file-importer">
+    <form [formGroup]="fileImporterForm">
         <div class="file-importer__file-chooser">
-            <div>
-                <label 
-                    for="file-chooser" 
-                    class="file-importer__file-chooser__label">
-                    Choose a file:
-                </label>
+                <div>
+                    <label 
+                        for="file-chooser" 
+                        class="file-importer__file-chooser__label">
+                        Choose a file:
+                    </label>
+                </div>
+                <input 
+                    class="file-importer__inputfile"
+                    type="file" 
+                    formControlName="fileInput"
+                    accept="text/csv" 
+                    (change)="onFileChange($event)">
             </div>
-            <input 
-                class="file-importer__inputfile"
-                type="file" 
-                id="file-chooser" 
-                name="fileChooser" 
-                accept="text/csv" 
-                (change)="onFileChange($event)">
-        </div>
+            <div class="error-message" *ngIf="fileImporterForm.controls.fileInput?.invalid">File format is incorrect</div>
+    </form>
+
         
-        <button role="button" 
-                class="file-importer__button" 
-                [disabled]="!file" 
-                (click)="submitFile()">
-                Submit
-        </button>
+    <button role="button" 
+            class="file-importer__button" 
+            [disabled]="!file || !fileImporterForm.valid" 
+            (click)="submitFile()">
+            Submit
+    </button>
 </div>
