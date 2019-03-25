@@ -5,7 +5,7 @@ import { Import } from '../../../../store/actions/issue.actions';
 
 @Component({
   selector: 'rabo-file-importer-container',
-  templateUrl: './file-importer-container.component.html',
+  template: `<rabo-file-importer (fileSubmit)="importFile($event)"></rabo-file-importer>`,
 })
 export class FileImporterContainerComponent implements OnInit {
 

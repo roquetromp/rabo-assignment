@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Effect, Actions, ofType } from '@ngrx/effects';
 import { FileParserService } from '../../services/file-parser.service';
-import { Store } from '@ngrx/store';
-import { State } from '../state/issue.state';
 import { Import, IssueActions, ImportComplete } from '../actions/issue.actions';
 import { switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
@@ -19,7 +17,6 @@ export class IssueEffects {
     );
 
     constructor(private fileParserService: FileParserService,
-        private action$: Actions,
-        private store: Store<State>) {}
+        private action$: Actions) {}
 
 }

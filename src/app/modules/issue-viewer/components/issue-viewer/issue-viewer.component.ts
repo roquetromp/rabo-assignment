@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Issue } from '../../../../models/issue.model';
 import { FormGroup, FormControl } from '@angular/forms';
 
@@ -9,7 +9,6 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class IssueViewerComponent implements OnInit {
   @Input() issues: Issue[];
-  @Output() onFilterIssues: EventEmitter<number> = new EventEmitter<number>();
   filterCount = 0;
 
   filterForm: FormGroup = new FormGroup({
