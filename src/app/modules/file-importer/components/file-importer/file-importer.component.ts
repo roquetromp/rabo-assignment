@@ -1,4 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { FileValidatorService } from 'src/app/services/file-validator.service';
+import { FileParserService } from 'src/app/services/file-parser.service';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'rabo-file-importer',
@@ -9,7 +12,7 @@ export class FileImporterComponent implements OnInit {
   @Output () fileSubmit: EventEmitter<File> = new EventEmitter<File>();
   file: File = null;
 
-  constructor() { }
+  constructor(private fileValidatorService: FileValidatorService, private fileParserService: FileParserService) { }
 
   ngOnInit() {
   }
@@ -21,6 +24,9 @@ export class FileImporterComponent implements OnInit {
 
   onFileChange(event) {
     this.file = event.target.files[0];
+    this.fileParserService.parseCSVFile(this.file).pipe(
+      map(fileContent => this.fileValidatorService.isValidFormat(fileContent))
+    ).subscribe(isValid => console.log(isValid));
   }
 
 }

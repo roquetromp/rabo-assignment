@@ -45,10 +45,10 @@ describe('FileImporterComponent', () => {
       }
     };
 
-    spyOn(component.onFileSubmit, 'emit');
+    spyOn(component.fileSubmit, 'emit');
 
     component.onFileChange(event);
     component.submitFile();
-    expect(component.onFileSubmit.emit).toHaveBeenCalledWith(mockedFile);
+    expect(component.fileSubmit.emit).toHaveBeenCalledWith(mockedFile);
   });
 });

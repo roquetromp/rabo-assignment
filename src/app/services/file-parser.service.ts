@@ -10,7 +10,7 @@ export class FileParserService {
 
   constructor() { }
 
-  private parseCSVFile(file: File): Observable<String[]> {
+  public parseCSVFile(file: File): Subject<String> {
     const reader = new FileReader();
     const parsedFile$ = new Subject<String>();
 
@@ -19,9 +19,7 @@ export class FileParserService {
       parsedFile$.next(<String>reader.result);
     };
 
-    return parsedFile$.pipe(
-      map(f => (f).split(/\r\n|\n/))
-    );
+    return parsedFile$;
   }
 
   public convertFileToIssueArray(lines: String[]): Issue[] {
@@ -29,8 +27,7 @@ export class FileParserService {
     lines.forEach(line => {
 
       const [firstName, surName, issueCount, dateOfBirth] = line.replace(/\"/g, '').split(',');
-      console.log(line);
-      console.log(dateOfBirth, new Date(dateOfBirth));
+
       issues.push({
         firstName: firstName,
         surname: surName,
@@ -44,7 +41,7 @@ export class FileParserService {
 
   public parseFileToIssues(file: File): Observable<Issue[]> {
     return this.parseCSVFile(file).pipe(
-      tap (v => console.log(v)),
+      map(f => f.split(/\r\n|\n/)),
       map(fileArray => this.convertFileToIssueArray(fileArray.slice(1)))
     );
   }
