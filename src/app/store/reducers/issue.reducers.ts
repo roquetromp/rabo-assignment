@@ -1,5 +1,5 @@
-import { initialState, State } from "../state/issue.state";
-import { IssueActionType, IssueActions, Import } from "../actions/issue.actions";
+import { initialState, State } from '../state/issue.state';
+import { IssueActionType, IssueActions, Import } from '../actions/issue.actions';
 
 export function reducer(state: State = initialState, action: IssueActionType): State {
     switch (action.type) {
@@ -10,8 +10,8 @@ export function reducer(state: State = initialState, action: IssueActionType): S
                 ...state,
                 issues: action.payload,
                 isProcessing: false
-            }
+            };
         default:
-            return { ...state }
+            return { ...state };
     }
 }

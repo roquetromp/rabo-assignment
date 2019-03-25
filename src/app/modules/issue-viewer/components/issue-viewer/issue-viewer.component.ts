@@ -10,11 +10,11 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class IssueViewerComponent implements OnInit {
   @Input() issues: Issue[];
   @Output() onFilterIssues: EventEmitter<number> = new EventEmitter<number>();
-  filterCount:number = 0;
+  filterCount = 0;
 
   filterForm: FormGroup = new FormGroup({
-    filterCount: new FormControl(0), 
-  })
+    filterCount: new FormControl(0),
+  });
 
   constructor() { }
 

@@ -10,7 +10,7 @@ import { reducer } from './store/reducers/issue.reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { IssueEffects } from './store/effects/issue.effects';
 import { appReducers } from './store/reducers/app.reducers';
-import { ReactiveFormsModule } from "@angular/forms";
+import { ReactiveFormsModule } from '@angular/forms';
 import { IssuesFilterPipe } from './pipes/issues-filter.pipe';
 
 @NgModule({

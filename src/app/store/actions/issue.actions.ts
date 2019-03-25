@@ -1,5 +1,5 @@
-import { Action } from "@ngrx/store";
-import { Issue } from "../../models/issue.model";
+import { Action } from '@ngrx/store';
+import { Issue } from '../../models/issue.model';
 
 export enum IssueActions {
     Import = '[Issue] Import',

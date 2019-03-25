@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { map, tap } from "rxjs/operators";
+import { map, tap } from 'rxjs/operators';
 import { Observable, Subject } from 'rxjs';
 import { Issue } from '../models/issue.model';
 
@@ -16,8 +16,8 @@ export class FileParserService {
 
     reader.readAsText(file);
     reader.onload = () => {
-      parsedFile$.next(<String>reader.result)
-    }
+      parsedFile$.next(<String>reader.result);
+    };
 
     return parsedFile$.pipe(
       tap(f => console.log(f)),
@@ -29,16 +29,16 @@ export class FileParserService {
     const issues: Issue[] = [];
     lines.forEach(line => {
 
-      const [firstName, surName, issueCount, dateOfBirth] = line.replace(/\"/g, "").split(',');
-      console.log(line)
-      console.log(dateOfBirth,new Date(dateOfBirth))
+      const [firstName, surName, issueCount, dateOfBirth] = line.replace(/\"/g, '').split(',');
+      console.log(line);
+      console.log(dateOfBirth, new Date(dateOfBirth));
       issues.push({
         firstName: firstName,
         surname: surName,
         issueCount: parseInt(issueCount),
         dateOfBirth: new Date(dateOfBirth)
-      })
-    })
+      });
+    });
     return issues;
   }
 
@@ -47,6 +47,6 @@ export class FileParserService {
     return this.parseCSVFile(file).pipe(
       tap (v => console.log(v)),
       map(fileArray => this.convertFileToIssueArray(fileArray.slice(1)))
-    )
+    );
   }
 }

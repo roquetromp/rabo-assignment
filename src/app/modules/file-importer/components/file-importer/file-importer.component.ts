@@ -7,7 +7,7 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 })
 export class FileImporterComponent implements OnInit {
   @Output () onFileSubmit: EventEmitter<File> = new EventEmitter<File>();
-  file:File = null;
+  file: File = null;
 
   constructor() { }
 
@@ -16,7 +16,7 @@ export class FileImporterComponent implements OnInit {
 
   submitFile() {
     this.onFileSubmit.emit(this.file);
-   
+
   }
 
   onFileChange(event) {

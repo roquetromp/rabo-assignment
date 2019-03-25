@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Import } from '../../../../store/actions/issue.actions';
 
-@Component({selector: 'rabo-file-importer', template:''})
+@Component({selector: 'rabo-file-importer', template: ''})
 class RaboFileImporterMockComponent {
 }
 
@@ -16,8 +16,8 @@ fdescribe('FileImporterContainerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ 
-        FileImporterContainerComponent , 
+      declarations: [
+        FileImporterContainerComponent ,
         RaboFileImporterMockComponent
       ],
       providers: [
@@ -40,11 +40,11 @@ fdescribe('FileImporterContainerComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should call the store dispatch method when importFile is called', ()=> {
+  it('should call the store dispatch method when importFile is called', () => {
     const store = TestBed.get(Store);
-    const file:File = new File([], 'mockFile.test');
+    const file: File = new File([], 'mockFile.test');
 
     component.importFile(file);
     expect(store.dispatch).toHaveBeenCalledWith(new Import(file));
-  })
+  });
 });

@@ -1,11 +1,11 @@
-import { Issue } from "../../models/issue.model";
+import { Issue } from '../../models/issue.model';
 
 export interface State {
     issues: Issue[];
-    isProcessing:boolean;
+    isProcessing: boolean;
 }
 
 export const initialState: State = {
-    issues:[],
+    issues: [],
     isProcessing: false,
-}
+};

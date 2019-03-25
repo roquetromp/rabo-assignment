@@ -24,31 +24,31 @@ describe('FileImporterComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should update the localfile property with the newly selected file', ()=> {
+  it('should update the localfile property with the newly selected file', () => {
     const event = {
       target: {
         files: [
           mockedFile
         ]
       }
-    }
+    };
     component.onFileChange(event);
     expect(component.file).toEqual(mockedFile);
-  })
+  });
 
-  it('should emit the locally selected file', ()=> {
+  it('should emit the locally selected file', () => {
     const event = {
       target: {
         files: [
           mockedFile
         ]
       }
-    }
+    };
 
     spyOn(component.onFileSubmit, 'emit');
 
     component.onFileChange(event);
     component.submitFile();
     expect(component.onFileSubmit.emit).toHaveBeenCalledWith(mockedFile);
-  })
+  });
 });

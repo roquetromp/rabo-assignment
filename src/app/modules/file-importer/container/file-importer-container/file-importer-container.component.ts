@@ -10,13 +10,13 @@ import { Issue } from '../../../../models/issue.model';
   templateUrl: './file-importer-container.component.html',
 })
 export class FileImporterContainerComponent implements OnInit {
-  
-  constructor(private store:Store<fromIssueState.State>) { }
+
+  constructor(private store: Store<fromIssueState.State>) { }
 
   ngOnInit() {
   }
 
-  importFile(file:File) {
+  importFile(file: File) {
     this.store.dispatch(new Import(file));
   }
 }

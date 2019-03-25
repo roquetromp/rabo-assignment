@@ -8,21 +8,21 @@ import { Filter } from '../../../../store/actions/issue.actions';
 
 @Component({
   selector: 'rabo-issue-viewer-container',
-  template: `<rabo-issue-viewer 
+  template: `<rabo-issue-viewer
                 (onFilterIssues)="applyFilter($event)"
                 [issues]="issues$ | async">
             </rabo-issue-viewer>`
 })
 export class IssueViewerContainerComponent implements OnInit {
   issues$: Observable<Issue[]>;
-  constructor(private store:Store<fromIssueState.State>) { }
+  constructor(private store: Store<fromIssueState.State>) { }
 
-  ngOnInit() { 
+  ngOnInit() {
 
-    this.issues$ = this.store.pipe(select(fromIssueSelectors.getIssues))
+    this.issues$ = this.store.pipe(select(fromIssueSelectors.getIssues));
   }
 
-  applyFilter(minIssueCount:number) {
-    this.store.dispatch(new Filter(minIssueCount))
+  applyFilter(minIssueCount: number) {
+    this.store.dispatch(new Filter(minIssueCount));
   }
 }
