@@ -23,17 +23,20 @@ export class FileImporterComponent implements OnInit {
 
   submitFile() {
     this.fileSubmit.emit(this.file);
-
   }
 
-  onFileChange(event) {
-    this.file = event.target.files[0];
+  validateFile(file: File) {
     this.fileParserService
       .parseCSVFile(this.file).pipe(
         map(fileContent => this.fileValidatorService.isValidFormat(fileContent))
       ).subscribe(isValid => {
         this.fileImporterForm.controls['fileInput'].setErrors(!isValid ? { invalidFormat: isValid } : null);
       });
+  }
+
+  onFileChange(event) {
+    this.file = event.target.files[0];
+    this.validateFile(this.file);
   }
 
 }
