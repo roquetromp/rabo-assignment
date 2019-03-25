@@ -1,5 +1,4 @@
 import { IssuesFilterPipe } from './issues-filter.pipe';
-import { Issue } from '../models/issue.model';
 
 fdescribe('IssuesFilterPipe', () => {
   it('create an instance', () => {

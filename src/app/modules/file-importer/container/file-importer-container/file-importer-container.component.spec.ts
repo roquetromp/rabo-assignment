@@ -1,8 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FileImporterContainerComponent } from './file-importer-container.component';
-import { NO_ERRORS_SCHEMA } from '@angular/compiler/src/core';
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Import } from '../../../../store/actions/issue.actions';
 

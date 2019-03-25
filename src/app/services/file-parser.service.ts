@@ -20,8 +20,7 @@ export class FileParserService {
     };
 
     return parsedFile$.pipe(
-      tap(f => console.log(f)),
-      map(file => (file).split(/\r\n|\n/))
+      map(f => (f).split(/\r\n|\n/))
     );
   }
 
@@ -35,7 +34,7 @@ export class FileParserService {
       issues.push({
         firstName: firstName,
         surname: surName,
-        issueCount: parseInt(issueCount),
+        issueCount: parseInt(issueCount, 10),
         dateOfBirth: new Date(dateOfBirth)
       });
     });

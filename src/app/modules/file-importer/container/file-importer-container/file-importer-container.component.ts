@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Store, select } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import * as fromIssueState from '../../../../store/state/issue.state';
 import { Import } from '../../../../store/actions/issue.actions';
-import { Observable } from 'rxjs';
-import { Issue } from '../../../../models/issue.model';
 
 @Component({
   selector: 'rabo-file-importer-container',

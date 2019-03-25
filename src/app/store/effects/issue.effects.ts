@@ -4,7 +4,7 @@ import { FileParserService } from '../../services/file-parser.service';
 import { Store } from '@ngrx/store';
 import { State } from '../state/issue.state';
 import { Import, IssueActions, ImportComplete } from '../actions/issue.actions';
-import { switchMap, tap } from 'rxjs/operators';
+import { switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { Issue } from '../../models/issue.model';
 
